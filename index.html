@@ -5,3 +5,99 @@
             <h1>Hello World</h1>
         </body>
 </html>
+
+
+
+main.py:-
+
+from flask import Flask
+app=Flask(__name__)
+@app.route('/')
+def hello():
+	return "Hello World"
+if __name__='main__':
+app.run(host='127.0.0.1', port=8080, debug=True)
+
+
+console.cloud.google.com
+select a project
+new project
+name:- appengine  ->create
+select project
+activate cloud shell
+
+APIs and services in menu
++enable apis and services
+search:- app engine api ->enter
+select app engine admin api
+enable
+
+command:-
+gcloud projects list
+gcloud config set project projectid
+gcloud app create
+7
+git clone (pasteHTTP github link and remove .git)
+ls
+cd repositoryname
+ls
+python3 main.py
+------------------------------------------------------------------------------------------------
+install cloud sdk
+cloud.google.com/sdk/docs/install
+
+in sdk shell
+>gcloud init
+close window
+
+gae folder
+test.py:
+import webapp2
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        self.response.write("Hello World")
+
+app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
+
+app.yml:
+runtime: python27
+api_version: 1
+threadsafe: false
+
+handlers:
+- url: /
+  script: test.app
+
+>py google-cloud-sdk\bin\dev_appserver.py C:\Users\DELL\Desktop\gae
+localhost:8000/instances
+
+
+app.vagrant.com download virtualbox
+oracle vitual box download
+
+open virtual box:-
+New->VM1,VM2 create use an existing choose vmdk downloaded file, type-linux,version-ubuntu(64-bit)
+
+File
+Preferences
+Network->Natnetwork
+
+VM1->settings->network->NAT network->OK for VM2 also
+
+Start VM1,VM2-> login->vagrant,password-vagrant
+
+command in vm1 and vm2- ifconfig
+vm1-> ls
+    >touch shree.txt
+    >nano shree.txt
+editor-> write content click ctrl S then ctrl X
+    >cat shree.txt
+    >scp shree.txt vagrant@10.0.16:/home/vagrant   //ipaddressofvm2
+    >yes
+    >pass->vagrant
+
+in vm2:->ls
+        >cat shree.txt
+
+
+
